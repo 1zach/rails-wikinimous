@@ -1,0 +1,26 @@
+<div class = "d-flex justify-content-between align-items-center bg-light p-3 border-bottom mb-2">
+<a href ="/articles" class="text-decoration-none text-secondary">Wikinimous</a>
+<span><%=link_to "New article", new_article_path(Article.new), class: "text-decoration-none text-secondary"%></span>
+</div>
+<div class = "container p-5">
+<div class = "my-5">
+  <%= form_for(@article) do |f| %>
+    <div class="card">
+      <div class ="card-body">
+        <div class ="mb-3">
+        <div id = "form">
+        <%= f.label :title, {class: "form-label"} %>
+        <%= f.text_field :title, {class: "form-control mb-2"}%>
+        </div>
+        <div class = "mb-3">
+        <%= f.label :content, {class: "form-label mb-2"} %>
+        <%= f.text_area :content, {class: "form-control vh-80"}  %>
+        </div>
+        <%= f.submit "Edit Article", class: "btn btn-primary"%>
+      </div>
+      <%=link_to "Home", articles_path, class: "text-decoration-none text-secondary border-right"%> <i class="fa-thin fa-pipe"></i> <%=link_to "Back", article_path(@article), class: "text-decoration-none text-secondary border-left"%>
+      </div>
+      </div>
+    </div>
+<% end %>
+</div>

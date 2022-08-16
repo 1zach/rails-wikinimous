@@ -1,0 +1,28 @@
+<div class = "d-flex justify-content-between align-items-center bg-light p-3 border-bottom mb-2">
+<a href ="/articles" class="text-decoration-none text-secondary">Wikinimous</a>
+
+</div>
+
+
+<div class = "container p-5">
+<h1>Create New</h1>
+<div class = "my-5">
+  <%= form_for(@article) do |f| %>
+    <div class="card">
+      <div class ="card-body">
+        <div class ="mb-3">
+        <div id = "form">
+        <%= f.label :title, {class: "form-label"} %>
+        <%= f.text_field :title, {class: "form-control mb-2"}%>
+        </div>
+        <div class = "mb-3">
+        <%= f.label :content, {class: "form-label mb-2"} %>
+        <%= f.text_area :content, {class: "form-control vh-80"}  %>
+        </div>
+        <%= f.submit "Create Article", class: "btn btn-primary"%>
+      </div>
+     
+      </div>
+      </div>
+    </div>
+<% end %>

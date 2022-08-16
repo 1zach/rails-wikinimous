@@ -1,3 +1,11 @@
+require 'faker'
+
+
+10.times do |object|
+    article = {title: Faker::Movies::Lebowski.character,
+        content: Faker::Lorem.paragraph(sentence_count: 10, supplemental: false, random_sentences_to_add: 4) }
+    Article.create(article)
+end
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
